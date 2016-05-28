@@ -35,7 +35,7 @@ public final class FizzBuzz {
      * Factory which creates FizzBuzz objects
      * @param begin
      * @param end
-     * @return
+     * @return FizzBuzz Object
      */
     public static FizzBuzz of(int begin, int end){
         return new FizzBuzz(begin, end);
