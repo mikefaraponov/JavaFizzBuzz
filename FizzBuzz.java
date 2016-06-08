@@ -37,7 +37,7 @@ public final class FizzBuzz {
      * @param end
      * @return FizzBuzz Object
      */
-    public static FizzBuzz of(int begin, int end){
+    public static FizzBuzz of(int begin, int end) {
         return new FizzBuzz(begin, end);
     }
 
@@ -48,17 +48,24 @@ public final class FizzBuzz {
      * Fizz if number is divided by 3, Buzz if number is divided by 5, FizzBuzz if number is divided by 15
      * or current number
      */
-    public static String toFizzBuzz(int n){
-        return n % 15 == 0? "FizzBuzz":
-               n % 3 == 0? "Fizz":
-               n % 5 == 0? "Buzz":
-               Integer.toString(n);
+    public static String toFizzBuzz(int n) {
+        StringBuilder sb = new StringBuilder();
+        if (n % 3 == 0) {
+            sb.append("Fizz");
+        }
+        if (n % 5 == 0) {
+            sb.append("Buzz");
+        }
+        if (sb.length() == 0) {
+            sb.append(n);
+        }
+        return sb.toString();
     }
 
     /**
      * @return stream with strings which was converted from IntStream by toFizzBuzz method
      */
-    public Stream<String> getFizzBuzzStream(){
+    public Stream<String> getFizzBuzzStream() {
         return IntStream.rangeClosed(begin, end)
                 .mapToObj(FizzBuzz::toFizzBuzz);
     }
