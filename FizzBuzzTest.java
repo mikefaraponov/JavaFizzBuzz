@@ -10,6 +10,16 @@ public class FizzBuzzTest {
     }
 
     @Test
+    public void testOfMethodSequenceOfArgumentsException() {
+        try {
+            FizzBuzz obj = FizzBuzz.of(100, 1);
+            fail("Expected an IllegalArgumentException to be thrown");
+        } catch (IllegalArgumentException e) {
+            assertEquals(e.getMessage(), "End number should be greater then begin number");
+        }
+    }
+
+    @Test
     public void toFizzBuzz() throws Exception {
         assertEquals("1", FizzBuzz.toFizzBuzz(1));
         assertEquals("Fizz", FizzBuzz.toFizzBuzz(3));

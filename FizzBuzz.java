@@ -33,11 +33,12 @@ public final class FizzBuzz {
 
     /**
      * Factory which creates FizzBuzz objects
-     * @param begin
-     * @param end
+     * @param begin start value of int range
+     * @param end last value of int range
      * @return FizzBuzz Object
      */
     public static FizzBuzz of(int begin, int end) {
+        if(begin > end) throw new IllegalArgumentException("End number should be greater then begin number");
         return new FizzBuzz(begin, end);
     }
 
@@ -49,24 +50,18 @@ public final class FizzBuzz {
      * or current number
      */
     public static String toFizzBuzz(int n) {
-        StringBuilder sb = new StringBuilder();
-        if (n % 3 == 0) {
-            sb.append("Fizz");
-        }
-        if (n % 5 == 0) {
-            sb.append("Buzz");
-        }
-        if (sb.length() == 0) {
-            sb.append(n);
-        }
-        return sb.toString();
+        String test = "";
+        test += (n % 3) == 0 ? "Fizz" : "";
+        test += (n % 5) == 0 ? "Buzz" : "";
+        return !test.isEmpty() ? test : Integer.toString(n);
     }
 
     /**
      * @return stream with strings which was converted from IntStream by toFizzBuzz method
      */
     public Stream<String> getFizzBuzzStream() {
-        return IntStream.rangeClosed(begin, end)
+        return IntStream
+                .rangeClosed(begin, end)
                 .mapToObj(FizzBuzz::toFizzBuzz);
     }
 
