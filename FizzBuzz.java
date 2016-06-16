@@ -38,7 +38,9 @@ public final class FizzBuzz {
      * @return FizzBuzz Object
      */
     public static FizzBuzz of(int begin, int end) {
-        if(begin > end) throw new IllegalArgumentException("End number should be greater then begin number");
+        if(begin > end) {
+            throw new IllegalArgumentException("End number should be greater then begin number");
+        }
         return new FizzBuzz(begin, end);
     }
 

@@ -1,7 +1,10 @@
 import org.junit.Test;
+import org.testng.annotations.BeforeTest;
+
 import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
+
     @Test
     public void of() throws Exception {
         FizzBuzz obj = FizzBuzz.of(1, 100);
@@ -27,5 +30,10 @@ public class FizzBuzzTest {
         assertEquals("FizzBuzz", FizzBuzz.toFizzBuzz(15));
         assertNotEquals("100", FizzBuzz.toFizzBuzz(100));
         assertEquals("Buzz", FizzBuzz.toFizzBuzz(100));
+    }
+
+    @Test
+    public void getFizzBuzzStream() throws Exception {
+
     }
 }
