@@ -26,7 +26,7 @@ public final class FizzBuzz {
      * @param begin start value of int range
      * @param end last value of int range
      */
-    private FizzBuzz(int begin, int end) {
+    private FizzBuzz(final int begin, final int end) {
         this.begin = begin;
         this.end = end;
     }
@@ -37,7 +37,7 @@ public final class FizzBuzz {
      * @param end last value of int range
      * @return FizzBuzz Object
      */
-    public static FizzBuzz of(int begin, int end) {
+    public static FizzBuzz of(final int begin, final int end) {
         if(begin > end) {
             throw new IllegalArgumentException("End number should be greater then begin number");
         }
