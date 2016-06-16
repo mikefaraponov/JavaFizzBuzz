@@ -6,7 +6,7 @@ public final class FizzBuzz {
     private final int end;
 
     /**
-     * begin setter
+     * begin getter
      * @return value of begin instance variable
      */
     public int getBegin() {
@@ -14,7 +14,7 @@ public final class FizzBuzz {
     }
 
     /**
-     * end setter
+     * end getter
      * @return value of end instance variable
      */
     public int getEnd() {
