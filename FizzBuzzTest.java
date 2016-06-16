@@ -1,6 +1,9 @@
 import org.junit.Test;
 import org.testng.annotations.BeforeTest;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
@@ -34,6 +37,11 @@ public class FizzBuzzTest {
 
     @Test
     public void getFizzBuzzStream() throws Exception {
+        String expected = "1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz";
+        String result = FizzBuzz.of(1, 15)
+                .getFizzBuzzStream()
+                .collect(Collectors.joining(" "));
 
+        assertEquals(result, expected);
     }
 }
